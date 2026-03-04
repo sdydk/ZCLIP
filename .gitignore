@@ -1,0 +1,68 @@
+# output dir
+output
+outputs
+instant_test_output
+inference_test_output
+output*/
+datasets/
+wandb/
+README.md
+*.out
+*.whl
+
+*.json
+*.diff
+*.jpg
+!/projects/DensePose/doc/images/*.jpg
+
+# torch-2.0.1+cu117-cp38-cp38-linux_x86_64.whl
+# torchvision-0.15.2+cu117-cp38-cp38-linux_x86_64.whl
+# compilation and distribution
+__pycache__
+_ext
+*.pyc
+*.pyd
+*.so
+*.dll
+*.egg-info/
+build/
+dist/
+wheels/
+
+# pytorch/python/numpy formats
+*.pth
+*.pkl
+*.npy
+*.ts
+model_ts*.txt
+
+# ipython/jupyter notebooks
+*.ipynb
+**/.ipynb_checkpoints/
+
+# Editor temporaries
+*.swn
+*.swo
+*.swp
+*~
+
+# editor settings
+.idea
+.vscode
+_darcs
+
+# project dirs
+/detectron2/model_zoo/configs
+/datasets/*
+!/datasets/*.*
+/projects/*/datasets
+/models
+/snippet
+
+# vs code
+.history
+
+amlt
+thirdparty
+wandb
+weights

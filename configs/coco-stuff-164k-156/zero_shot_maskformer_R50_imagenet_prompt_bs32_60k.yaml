@@ -1,0 +1,20 @@
+_BASE_: ../coco-stuff-164k-171/maskformer_R50_bs32_60k.yaml
+MODEL:
+  META_ARCHITECTURE: "ZeroShotMaskFormer"
+  SEM_SEG_HEAD:
+    NAME: "ZeroShotMaskFormerHead"
+    # 设置为40时会报错RuntimeError: weight tensor should be defined either for all or no classes  这是因为TRAIN:应该设置为("coco_2017_train_stuff_base_sem_seg",)
+    NUM_CLASSES: 50 # only used in set criterion  
+    EMBEDDING_DIM: 512
+    EMBED_LAYERS: 2
+  CLIP_ADAPTER:
+    PROMPT_LEARNER: "imagenet"
+    CLIP_MODEL_NAME: "ViT-B/16"
+    MASK_FILL: "mean"
+    MASK_EXPAND_RATIO: 1.0
+    MASK_THR: 0.5
+    MASK_MATTING: False
+    REGION_RESIZED: True
+    CLIP_ENSEMBLE: True
+DATASETS:
+  TRAIN: ("coco_2017_train_stuff_base_sem_seg",)
